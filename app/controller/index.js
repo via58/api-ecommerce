@@ -5,7 +5,6 @@ exports.getAllUsers = async (req, res) => {
     let allusers = [];
     user.forEach(doc => {
         const data = doc.data();
-
         // Convert Firestore timestamps to JS Date
         if (data.createdAt && data.createdAt._seconds) {
             data.createdAt = new Date(data.createdAt._seconds * 1000);
