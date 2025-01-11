@@ -1,9 +1,8 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("../../key.json");
-
+var {configuration} = require("./constants");
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
+  credential: admin.credential.cert(configuration),
   databaseURL: "https://project-ecommerce-1-default-rtdb.firebaseio.com"
 });
 
